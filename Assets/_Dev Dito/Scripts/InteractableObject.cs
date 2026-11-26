@@ -14,6 +14,13 @@ public class InteractableObject : MonoBehaviour
 
     public UnityEvent onInteract;
 
+    // Teks yang ditampilkan di UI saat objek ini ditargetkan.
+    // Override jika teksnya perlu berubah sesuai kondisi (contoh: gembok).
+    public virtual string GetInteractionPrompt()
+    {
+        return interactionPrompt;
+    }
+
     public virtual void Interact()
     {
         Debug.Log("[INTERACTION] Interacting with: " + interactionName);
